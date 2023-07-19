@@ -1,0 +1,146 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+    <style>
+        .full-width-bg {
+            background-image: url("{% static 'main/images/20230613_082155.jpg' %}");
+            background-size: cover;
+            width: 100vw;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+    <div class="full-width-bg">
+        <h1>The Source of <span id="intro" style="color: #f15722;">Auto Electrical Solutions</span></h1>
+    </div>
+    <div class="container">
+    	
+    	<style>
+			/* Created By: Mohammad Al Hefel */
+			:root {
+			    --main-color: #f15722;;
+			}
+
+			* {
+			    font-family: "Poppins", sans-serif;
+			}
+
+			.container {
+			    width: 100%;
+			    height: 100vh;
+			    padding: 0 8%;
+			}
+
+			.container h2 {
+			    text-align: center;
+			    padding-top: 6%;
+			    margin-bottom: 60px;
+			    font-size: 1.8rem;
+			    font-weight: 600;
+			    position: relative;
+			}
+
+			.container h2::after {
+			    content: "";
+			    position: absolute;
+			    bottom: -8px;
+			    left: 50%;
+			    transform: translateX(-50%);
+			    width: 100px;
+			    height: 5px;
+			    background-color: var(--main-color);
+			    border-radius: 20px;
+			}
+
+			.row {
+			    display: grid;
+			    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			    gap: 30px;
+			}
+
+			.row .service {
+			    padding: 25px 15px;
+			    background: transparent;
+			    font-size: 15px;
+			    border-radius: 5px;
+			    text-align: center;
+			    cursor: pointer;
+			    transition: 0.5s;
+			}
+
+			.row .service:hover {
+			    color: #fff;
+			    background-color: var(--main-color);
+			    transform: scale(1.05);
+			}
+
+			.row .service i {
+			    color: var(--main-color);
+			    margin-bottom: 20px;
+			    font-size: 40px;
+			    transition: 0.5s;
+			}
+
+			.row .service:hover i {
+			    color: #fff;
+			}
+
+			.row .service h2 {
+			    font-weight: 600;
+			    margin-bottom: 20px;
+			}
+
+    	</style>
+
+		<section class="container">
+		    <h2>Our Services</h2>
+		    <div class="row">
+		        <div class="service">
+		            <i class="ri-car-line"></i>
+		            <h4>Web Design</h4>
+		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		        </div>
+		        <div class="service">
+		            <i class="ri-car-line"></i>
+		            <h4>Marketing</h4>
+		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		        </div>
+		        <div class="service">
+		            <i class="ri-car-line"></i>
+		            <h4>Data Analysis</h4>
+		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		        </div>
+		        <div class="service">
+		            <i class="ri-car-line"></i>
+		            <h4>Graphic Design</h4>
+		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		        </div>
+		        <div class="service">
+		            <i class="ri-car-line"></i>
+		            <h4>App Development</h4>
+		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		        </div>
+		        <div class="service">
+		            <i class="ri-car-line"></i>
+		            <h4>Accounting</h4>
+		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		        </div>
+		        <div class="service">
+		            <i class="ri-car-line"></i>
+		            <h4>Business Management</h4>
+		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		        </div>
+		        <div class="service">
+		            <i class="ri-car-line"></i>
+		            <h4>English Teaching</h4>
+		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		        </div>
+		    </div>
+		</section>
+    </div>
+{% endblock content %}
