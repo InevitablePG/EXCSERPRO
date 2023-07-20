@@ -1,0 +1,23 @@
+.full-width-bg {
+    background-size: cover;
+    width: 100vw;
+    height: 280px;
+    display: flex;
+    flex-direction: column; /* Set the flex direction to column */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* Add a margin between the two headings */
+.full-width-bg h1 {
+    margin-top: 10px;
+}
+
+/* Define a class for the text with the bottom border */
+.colored-bottom-border {
+    border-bottom: 2px solid #f15722;
+    display: inline; /* Ensure the text is displayed inline */
+}

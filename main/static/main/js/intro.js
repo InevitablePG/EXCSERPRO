@@ -1,5 +1,5 @@
 function changeService() {
-    const services = ["Mechanical", "Auto Electrical Solutions"];
+    const services = ["Mechanical Solutions", "Auto Electrical Solutions"];
     const highlightedServiceElement = document.getElementById("intro");
     let currentServiceIndex = 0;
 

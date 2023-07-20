@@ -1,4 +1,13 @@
 {% extends "main/base.html" %}
+{% load static %}
 {% block content %}
-	<h1>Hello World Gallery</h1>
+	<style>
+		.full-width-bg {
+			background-image: url("{% static 'main/images/auto.png' %}");
+		}
+	</style>
+	<div class="full-width-bg mb-5">
+	    <h4 style="background: rgba(0, 0, 0, 0.5);" class="colored-bottom-border gordita-regular">EXCELLENT SERVICE PROVIDER</h4>
+	    <h1 style="background: rgba(0, 0, 0, 0.5);" class="gordita-bold">GALLERY</h1>
+	</div>
 {% endblock content %}

@@ -1,146 +1,264 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block content %}
-    <style>
-        .full-width-bg {
-            background-image: url("{% static 'main/images/20230613_082155.jpg' %}");
-            background-size: cover;
-            width: 100vw;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-        }
-    </style>
-    <div class="full-width-bg">
-        <h1>The Source of <span id="intro" style="color: #f15722;">Auto Electrical Solutions</span></h1>
-    </div>
-    <div class="container">
-    	
-    	<style>
-			/* Created By: Mohammad Al Hefel */
-			:root {
-			    --main-color: #f15722;;
-			}
+	<style>
+		.full-width-bg {
+			background-image: url("{% static 'main/images/auto.png' %}");
+		}
+	</style>
+	<div class="full-width-bg mb-5">
+	    <h4 style="background: rgba(0, 0, 0, 0.5);" class="colored-bottom-border gordita-regular">EXCELLENT SERVICE PROVIDER</h4>
+	    <h1 style="background: rgba(0, 0, 0, 0.5);" class="gordita-bold">The Source of <span class="colored-bottom-border gordita-bold" id="intro" style="color: #f15722;">Auto Electrical Solutions</span></h1>
+	</div>
 
-			* {
-			    font-family: "Poppins", sans-serif;
+	<div class="text-center mb-5">
+		<div>
+			<h1 class="mb-3 gordita-bold">Trusted By</h1>
+			<h3 class="gordita-regular colored-bottom-border">Industry Leaders</h3>
+		</div>
+		<div>
+			<img height="200px" width="200px" class="img-fluid" src="{% static 'main/images/retail-motor-industry-organisation-rmi-vector-logo.svg' %}">
+			<img height="200px" width="200px" class="img-fluid" src="{% static 'main/images/motor-industry-workshop-association-miwa-vector-logo.svg' %}">
+		</div>
+		<div>
+			<div style="width: 60vw; margin: 40px auto;">
+				<h2 class="gordita-regular mb-2"> We Are The <span class="gordita-bold">Orthopedic Surgeons</span> of Auto Electrical & Mechanical Solutions</h2>
+			</div>
+			<div style="width: 80vw; margin: 20px auto;">
+				<h4 class="gordita-regular">We pride ourselves on being the orthopedic surgeons of the automotive world. Just like skilled surgeons, we diagnose and treat your vehicle's electrical and mechanical issues with precision and expertise. Our team of dedicated professionals is committed to providing top-notch solutions, ensuring your vehicle stays in optimal health. From complex repairs to routine maintenance, trust us to deliver unparalleled care and get your wheels back on the road with utmost confidence. Experience the difference with our specialized automotive expertise – where your car is our priority.</h4>
+			</div>
+			<div style="margin-bottom: 60px !important">
+				<img class="img-fluid" src="{% static 'main/images/Products.png' %}">
+			</div>
+			<div style="width: 60vw; margin: 40px auto;">
+				<h2 class="gordita-regular mb-2"> We’re The Last <span class="gordita-bold">Mechanical Company</span> You Will Have To Hire</h2>
+			</div>
+		</div>
+	</div>
+	<div>
+		<style>
+			.service-grid {
+			    background: #fcfcfc;
 			}
-
-			.container {
-			    width: 100%;
-			    height: 100vh;
-			    padding: 0 8%;
+			    .service-title h4 {
+			    position: relative;
+			    display: inline-block;
 			}
-
-			.container h2 {
-			    text-align: center;
-			    padding-top: 6%;
-			    margin-bottom: 60px;
-			    font-size: 1.8rem;
-			    font-weight: 600;
+			.service-icon {
 			    position: relative;
 			}
-
-			.container h2::after {
-			    content: "";
-			    position: absolute;
-			    bottom: -8px;
-			    left: 50%;
-			    transform: translateX(-50%);
-			    width: 100px;
-			    height: 5px;
-			    background-color: var(--main-color);
-			    border-radius: 20px;
+			.service-title p {
+			    padding: 0 190px;
+			    margin-bottom: 10px;
 			}
-
-			.row {
-			    display: grid;
-			    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			    gap: 30px;
+			.about-info-text h2 {
+			    margin-bottom: 23px;
+			    text-transform: capitalize;
+			    font-weight: 700;
+			    line-height: .9;
 			}
-
-			.row .service {
-			    padding: 25px 15px;
-			    background: transparent;
-			    font-size: 15px;
-			    border-radius: 5px;
-			    text-align: center;
-			    cursor: pointer;
-			    transition: 0.5s;
+			.about-info-text p {
+			    padding: 0 100px;
+			    font-size: 18px;
+			    margin-bottom: 26px;
+			      position: relative;
 			}
-
-			.row .service:hover {
-			    color: #fff;
-			    background-color: var(--main-color);
-			    transform: scale(1.05);
+			.about-content p {
+			    margin-bottom: 0;
 			}
-
-			.row .service i {
-			    color: var(--main-color);
+			.about-info-text a {
 			    margin-bottom: 20px;
+			      position: relative;
+			}
+			.service-icon i {
 			    font-size: 40px;
-			    transition: 0.5s;
+			    color: #f15722;
+			    margin-bottom: 20px;
+			    display: inline-block;
+			}
+			.service-wrap {
+			    border: 1px solid #e6e6e6;
+			    padding: 50px 30px;
+			      position: relative;
 			}
 
-			.row .service:hover i {
+			.service-wrap p{
+			      position: relative;
+			}
+
+			.service-wrap:hover {
+			    background-image: url("{% static 'main/images/service.png' %}");
+			    background-size: cover;
+			    background-position: center center;
+			    background-attachment: local;
+			    transition: all .5s;
+			}
+
+			.service-wrap:hover:before {
+			    background: rgba(0, 0, 0, 0.2901960784313726);
+			    position: absolute;
+			    height: 100%;
+			    width: 100%;
+			    left: 0px;
+			    content: "";
+			    top: 0;
+			    opacity: 1;
+			}
+
+			.service-wrap:hover h4,.service-wrap:hover p{
 			    color: #fff;
 			}
-
-			.row .service h2 {
+			.service-wrap h4 {
 			    font-weight: 600;
-			    margin-bottom: 20px;
+			    color: #1e2331;
+			    margin-bottom: 17px;
+			    font-size: 18px;
+			    text-transform: capitalize;
+			    position: relative;
 			}
+			.service-wrap a {
+			    font-size: 14px;
+			    font-weight: 600;
+			    position: relative;
 
-    	</style>
-
-		<section class="container">
-		    <h2>Our Services</h2>
-		    <div class="row">
-		        <div class="service">
-		            <i class="ri-car-line"></i>
-		            <h4>Web Design</h4>
-		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+			}
+		</style>
+		<section class="service-grid pb-5 pt-5">
+            <div class="container">
+                <div style="margin-bottom: 60px !important" class="row">
+                    <div class="col-xl-12 text-center mb-4">
+                        <div class="service-title">
+                            <h2>OUR SERVICES</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col-md-6 text-center">
+                        <div class="service-title mb-5">
+                            <h3 class="gordita-bold colored-bottom-border">Auto Electrical</h3>
+                        </div>
+		                <div class="row">
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Starter Repair</h4>
+		                            <p>Expert starter repair and maintenance services to get you back on the road in no time.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Alternator Repairs</h4>
+		                            <p>Efficient alternator repair services to keep your vehicle's electrical system in top shape.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Wiring & Rewinding</h4>
+		                            <p>Specialized wiring and rewinding solutions for a reliable and safe electrical system.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Auto Electrical Spares</h4>
+		                            <p>Quality auto electrical spares available to keep your vehicle running smoothly.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Battery Testing & Charging</h4>
+		                            <p>Professional battery testing and charging services for optimal battery performance.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="col-md-6 text-center">
+                        <div class="service-title mb-5">
+                            <h3 class="gordita-bold colored-bottom-border">Mechanical</h3>
+                        </div>
+		                <div class="row">
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Car Service (Minor/Major)</h4>
+		                            <p>Comprehensive car service, from minor to major, to ensure your vehicle's peak performance.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Engine Overhaul</h4>
+		                            <p>Skilled engine overhaul services to revitalize your vehicle's power and efficiency.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Gearbox Repairs</h4>
+		                            <p>Expert gearbox repairs to maintain smooth gear transitions and extend the life of your transmission.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Clutch Repairs</h4>
+		                            <p>Specialized clutch repairs to ensure precise control and optimal driving experience.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Suspension Repairs</h4>
+		                            <p>Efficient suspension repairs for a smooth and comfortable ride on any road.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Car Diagnosis</h4>
+		                            <p>Advanced car diagnostic services to pinpoint issues and provide precise solutions for your vehicle.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
 		        </div>
-		        <div class="service">
-		            <i class="ri-car-line"></i>
-		            <h4>Marketing</h4>
-		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-		        </div>
-		        <div class="service">
-		            <i class="ri-car-line"></i>
-		            <h4>Data Analysis</h4>
-		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-		        </div>
-		        <div class="service">
-		            <i class="ri-car-line"></i>
-		            <h4>Graphic Design</h4>
-		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-		        </div>
-		        <div class="service">
-		            <i class="ri-car-line"></i>
-		            <h4>App Development</h4>
-		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-		        </div>
-		        <div class="service">
-		            <i class="ri-car-line"></i>
-		            <h4>Accounting</h4>
-		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-		        </div>
-		        <div class="service">
-		            <i class="ri-car-line"></i>
-		            <h4>Business Management</h4>
-		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-		        </div>
-		        <div class="service">
-		            <i class="ri-car-line"></i>
-		            <h4>English Teaching</h4>
-		            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-		        </div>
-		    </div>
-		</section>
+            </div>
+        </section>
     </div>
 {% endblock content %}

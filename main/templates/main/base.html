@@ -6,6 +6,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -15,12 +18,47 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/nav.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/footer.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/page_intro.css' %}">
+
+        <style>
+            @font-face {
+                font-family: "gordita_bold";
+                src: url("{% static 'main/fonts/Gordita/Gordita-Bold.ttf' %}");
+            }
+
+            @font-face {
+                font-family: "gordita_regular";
+                src: url("{% static 'main/fonts/Gordita/Gordita-Regular.ttf' %}");
+            }
+
+            .gordita-bold {
+                font-family:gordita_bold !important;
+            }
+
+            .gordita-regular {
+                font-family:gordita_regular !important;
+            }
+        </style>
 
         <title>{% if title %}{{ title }}{% else %}EXCSERPRO{% endif %}</title>
     </head>
     <body>
-
         <header id="nav-menu" aria-label="navigation bar">
+            <div style="background-color: #f15722; color: #ffffff;" class="d-flex flex-row align-items-center">
+                <div class="footer-left col-md-4 col-sm-6">
+                    <i class="fa fa-phone"></i>
+                    <p> 017 632 1444</p>
+                </div>
+                <div class="footer-center col-md-4 col-sm-6">
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="#"> info@excserpro.co.za</a></p>
+                </div>
+                <div class="footer-right col-md-4 col-sm-6">
+                    <i class="fa fa-globe"></i>
+                    <p><a href="#"> www.excserpro.co.za</a></p>
+                </div>
+            </div>
             <div class="nav-container">
                 <div class="nav-start">
                     <a class="logo" href="/">
@@ -36,8 +74,8 @@
                                 <div id="dropdown1" class="dropdown">
                                     <ul role="menu">
                                         <li role="menuitem">
-                                            <a class="dropdown-link" href="#auto-electrical">
-                                                <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/botd.svg" class="icon" />
+                                            <a class="dropdown-link" href="{% url 'Services' %}">
+                                                <img src="{% static 'main/images/botd.svg' %}" class="icon" />
                                                 <div>
                                                     <span class="dropdown-link-title">Auto Electrical</span>
                                                     <p>Starters, Alternators, Wiring, Rewinding, Spares, Battery Tes...</p>
@@ -45,8 +83,8 @@
                                             </a>
                                         </li>
                                         <li role="menuitem">
-                                            <a class="dropdown-link" href="#mechanical">
-                                                <img src="https://raw.githubusercontent.com/Evavic44/responsive-navbar-with-dropdown/main/assets/icons/fs.svg" class="icon" />
+                                            <a class="dropdown-link" href="{% url 'Services' %}">
+                                                <img src="{% static 'main/images/fs.svg' %}" class="icon" />
                                                 <div>
                                                     <span class="dropdown-link-title">Mechanical</span>
                                                     <p>Car Service, Engine Overhaul, Gearbox, Clutch, Suspension, Diagno...</p>
@@ -66,10 +104,10 @@
 
                 <div class="nav-end">
                     <div class="right-container">
-                        <a href="#profile">
+<!--                         <a href="#profile">
                             <img src="https://github.com/Evavic44/responsive-navbar-with-dropdown/blob/main/assets/images/user.jpg?raw=true" width="30" height="30" alt="profile pic" />
-                        </a>
-                        <button class="nav-btn btn-primary">Contact</button>
+                        </a> -->
+                        <button class="nav-btn">Contact</button>
                     </div>
 
                     <button id="hamburger" aria-label="hamburger" aria-haspopup="true" aria-expanded="false">
@@ -80,6 +118,49 @@
         </header>
 
         {% block content %}{% endblock %}
+
+        <footer class="footer">
+            <div style="color: #ffffff; border-bottom: 1px solid #ffffff;" class="text-center">
+                <p>Monday - Thursday (8AM - 5PM)</p>
+                <p>Friday (8AM - 4PM)</p>
+                <p>Saturday (Booking)</p>
+            </div>
+            <div class="footer-left col-md-4 col-sm-6 mt-3">
+                <p class="about">
+                    <span> About the company</span> To serve and provide our customers with quality & service second to no-one. Ensure that all components that are repaired or supplied are of the best quality. Provide an efficient and professional service, reinforced by stringent quality controls. Develop and train our staff to achieve personal development by using the resources at its disposal efficiently. Provide a safe and pleasant work environment, encouraging participation and growth, mutual respect, dignity and job satisfaction.
+                </p>
+                <div class="icons">
+                    <a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="footer-center col-md-4 col-sm-6">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span> 7 Columbia Road</span> Evander 2285, South Africa</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p> 017 632 1444</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="#"> info@excserpro.co.za</a></p>
+                </div>
+                <div>
+                    <i class="fa fa-globe"></i>
+                    <p><a href="#"> www.excserpro.co.za</a></p>
+                </div>
+            </div>
+            <div class="footer-right col-md-4 col-sm-6">
+                <h2 class="mb-5 mt-5">
+                    <a class="logo" href="/">
+                        <img style="background-color: #ffffff;" src="{% static 'main/images/excserpro_logo.png' %}" width="248" height="39" alt="Excserpro Logo" />
+                    </a>
+                </h2>
+                <p class="name"> EXCSERPRO &copy; 2017 - 2023</p>
+            </div>
+        </footer>
+
         <script src="{% static 'main/js/intro.js' %}" type="text/javascript"></script>
         <script src="{% static 'main/js/nav.js' %}" type="text/javascript"></script>
         <!-- Optional JavaScript -->

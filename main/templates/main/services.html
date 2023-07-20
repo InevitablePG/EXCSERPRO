@@ -1,4 +1,233 @@
 {% extends "main/base.html" %}
+{% load static %}
 {% block content %}
-	<h1>Hello World Services</h1>
+	<style>
+		.full-width-bg {
+			background-image: url("{% static 'main/images/auto.png' %}");
+		}
+	</style>
+	<div class="full-width-bg mb-5">
+	    <h4 style="background: rgba(0, 0, 0, 0.5);" class="colored-bottom-border gordita-regular">EXCELLENT SERVICE PROVIDER</h4>
+	    <h1 style="background: rgba(0, 0, 0, 0.5);" class="gordita-bold">OUR SERVICES</h1>
+	</div>
+
+	<div>
+		<style>
+			.service-grid {
+			    background: #fcfcfc;
+			}
+			    .service-title h4 {
+			    position: relative;
+			    display: inline-block;
+			}
+			.service-icon {
+			    position: relative;
+			}
+			.service-title p {
+			    padding: 0 190px;
+			    margin-bottom: 10px;
+			}
+			.about-info-text h2 {
+			    margin-bottom: 23px;
+			    text-transform: capitalize;
+			    font-weight: 700;
+			    line-height: .9;
+			}
+			.about-info-text p {
+			    padding: 0 100px;
+			    font-size: 18px;
+			    margin-bottom: 26px;
+			      position: relative;
+			}
+			.about-content p {
+			    margin-bottom: 0;
+			}
+			.about-info-text a {
+			    margin-bottom: 20px;
+			      position: relative;
+			}
+			.service-icon i {
+			    font-size: 40px;
+			    color: #f15722;
+			    margin-bottom: 20px;
+			    display: inline-block;
+			}
+			.service-wrap {
+			    border: 1px solid #e6e6e6;
+			    padding: 50px 30px;
+			      position: relative;
+			}
+
+			.service-wrap p{
+			      position: relative;
+			}
+
+			.service-wrap:hover {
+			    background-image: url("{% static 'main/images/service.png' %}");
+			    background-size: cover;
+			    background-position: center center;
+			    background-attachment: local;
+			    transition: all .5s;
+			}
+
+			.service-wrap:hover:before {
+			    background: rgba(0, 0, 0, 0.2901960784313726);
+			    position: absolute;
+			    height: 100%;
+			    width: 100%;
+			    left: 0px;
+			    content: "";
+			    top: 0;
+			    opacity: 1;
+			}
+
+			.service-wrap:hover h4,.service-wrap:hover p{
+			    color: #fff;
+			}
+			.service-wrap h4 {
+			    font-weight: 600;
+			    color: #1e2331;
+			    margin-bottom: 17px;
+			    font-size: 18px;
+			    text-transform: capitalize;
+			    position: relative;
+			}
+			.service-wrap a {
+			    font-size: 14px;
+			    font-weight: 600;
+			    position: relative;
+
+			}
+		</style>
+		<section class="service-grid pb-5 pt-5">
+            <div class="container">
+                <div class="row">
+                	<div class="col-md-6 text-center">
+                        <div class="service-title mb-5">
+                            <h3 class="gordita-bold colored-bottom-border">Auto Electrical</h3>
+                        </div>
+		                <div class="row">
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Starter Repair</h4>
+		                            <p>Expert starter repair and maintenance services to get you back on the road in no time.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Alternator Repairs</h4>
+		                            <p>Efficient alternator repair services to keep your vehicle's electrical system in top shape.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Wiring & Rewinding</h4>
+		                            <p>Specialized wiring and rewinding solutions for a reliable and safe electrical system.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Auto Electrical Spares</h4>
+		                            <p>Quality auto electrical spares available to keep your vehicle running smoothly.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Battery Testing & Charging</h4>
+		                            <p>Professional battery testing and charging services for optimal battery performance.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="col-md-6 text-center">
+                        <div class="service-title mb-5">
+                            <h3 class="gordita-bold colored-bottom-border">Mechanical</h3>
+                        </div>
+		                <div class="row">
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Car Service (Minor/Major)</h4>
+		                            <p>Comprehensive car service, from minor to major, to ensure your vehicle's peak performance.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Engine Overhaul</h4>
+		                            <p>Skilled engine overhaul services to revitalize your vehicle's power and efficiency.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Gearbox Repairs</h4>
+		                            <p>Expert gearbox repairs to maintain smooth gear transitions and extend the life of your transmission.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Clutch Repairs</h4>
+		                            <p>Specialized clutch repairs to ensure precise control and optimal driving experience.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Suspension Repairs</h4>
+		                            <p>Efficient suspension repairs for a smooth and comfortable ride on any road.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                    <div class="col-lg-6 col-md-6 text-center mb-3">
+		                        <div class="service-wrap">
+		                            <div class="service-icon">
+		                                <i class="fas fa-wrench"></i>
+		                            </div>
+		                            <h4>Car Diagnosis</h4>
+		                            <p>Advanced car diagnostic services to pinpoint issues and provide precise solutions for your vehicle.</p>
+		                            <a href="#">Learn More</a>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+            </div>
+        </section>
+    </div>
 {% endblock content %}
