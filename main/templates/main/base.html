@@ -20,6 +20,8 @@
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/nav.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/footer.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/page_intro.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/services.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}">
 
         <style>
             @font-face {
@@ -45,27 +47,27 @@
     </head>
     <body>
         <header id="nav-menu" aria-label="navigation bar">
-            <div style="background-color: #f15722; color: #ffffff;" class="d-flex flex-row align-items-center pt-2">
-                <div class="footer-left col-md-6 col-sm-6">
-                    <i class="fa fa-phone"></i>
-                    <p> 017 632 1444</p>
+            <div style="background-color: #f15722; color: #ffffff;" class="d-flex flex-row pt-3">
+                <div style="width: 50%;" class="d-flex col-md-6 col-sm-6 align-items-center">
+                    <i class="fa fa-phone pb-3 mr-1"></i>
+                    <p style="font-weight: bold; font-size: 14px; line-height: 2;">017 632 1444</p>
                 </div>
-                <div class="footer-center col-md-6 col-sm-6">
-                    <i class="fa fa-envelope"></i>
-                    <p><a href="#"> info@excserpro.co.za</a></p>
+                <div style="width: 50%;" class="d-flex col-md-6 col-sm-6 align-items-center">
+                    <i class="fa fa-envelope pb-3 mr-2"></i>
+                    <p style="font-weight: bold; font-size: 15px; line-height: 2;"><a href="#">info@excserpro.co.za</a></p>
                 </div>
             </div>
             <div class="nav-container">
                 <div class="nav-start">
                     <a class="logo" href="/">
-                        <img src="{% static 'main/images/excserpro_logo.png' %}" width="207" height="33" alt="Excserpro Logo" />
+                        <img src="{% static 'main/images/excserpro_logo.png' %}" width="165" height="26" alt="Excserpro Logo" />
                     </a>
                     <nav class="menu">
                         <ul class="menu-bar">
                             <li>
                                 <button class="nav-link dropdown-btn" data-dropdown="dropdown1" aria-haspopup="true" aria-expanded="false" aria-label="browse">
                                     Services
-                                    <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                                    <i class="bx bx-chevron-down-circle" aria-hidden="true"></i>
                                 </button>
                                 <div id="dropdown1" class="dropdown">
                                     <ul role="menu">
@@ -100,12 +102,18 @@
 
                 <div class="nav-end">
                     <div class="right-container">
-<!--                         <a href="#profile">
-                            <img src="https://github.com/Evavic44/responsive-navbar-with-dropdown/blob/main/assets/images/user.jpg?raw=true" width="30" height="30" alt="profile pic" />
-                        </a> -->
-                        <button class="nav-btn">
-                            <a href="{% url 'Contact' %}">Contact</a>
-                        </button>
+                        {% if user.is_authenticated %}
+	                        <a href="{% url 'profile' %}">
+	                            <img src="{{ user.profile.image.url }}" width="30" height="30" alt="profile pic" />
+	                        </a>
+                            <button style="font-weight: 500; font-size: 1rem;" class="btn btn-sm btn-primary">
+                                <a href="{% url 'logout' %}">Logout</a>
+                            </button>
+                        {% else %}
+                            <button style="background-color: #f15722; color: white; font-weight: 500; font-size: 1rem;" class="btn btn-sm">
+                                <a href="{% url 'Contact' %}">Contact</a>
+                            </button>
+                        {% endif %}
                     </div>
 
                     <button id="hamburger" aria-label="hamburger" aria-haspopup="true" aria-expanded="false">

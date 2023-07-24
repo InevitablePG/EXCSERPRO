@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <title>{% if title %}{{ title }}{% else %}EXCSERPRO{% endif %}</title>
+        
+        <style>
+            @font-face {
+                font-family: "gordita_bold";
+                src: url("{% static 'main/fonts/Gordita/Gordita-Bold.ttf' %}");
+            }
+        
+            .gordita-bold {
+                font-family:gordita_bold !important;
+            }
+            
+            body {
+                background-color: #F0F0F0;
+            }
+            
+            .wrapper-forms {
+                background-color: white;
+                width: 300px;
+                margin: 40px auto;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper-forms">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div>
+                {% block content %}{% endblock %}
+                <small>
+                    <a href="{% url 'Home' %}">&#8592; Go back to EXCSERPRO Excellent Service Provider</a>
+                </small>
+            </div>
+        </div>
+    </body>
+</html>

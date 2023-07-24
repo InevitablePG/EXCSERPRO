@@ -4,14 +4,14 @@
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="text-center mb-4 gordita-bold">Register</legend>
+            <legend class="text-center mb-4 gordita-bold">Login</legend>
             {{ form|crispy }}
         </fieldset>
         <div style="display: flex;" class="form-group">
-            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            <button class="btn btn-outline-info" type="submit">Login</button>
             <small style="margin: auto 5px;" class="text-muted ml-2">
-                <a href="{% url 'login' %}">
-                    Login
+                <a href="{% url 'register' %}">
+                    Register
                 </a>
                 <span style="margin: 1px;">
                     |

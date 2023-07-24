@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Testimonial
+from .forms import CommentForm
 
 
 def home(request):
@@ -18,7 +21,20 @@ def gallery(request):
 
 
 def testimonals(request):
-	return render(request, 'main/testimonals.html', {'title': 'EXCSERPRO: Testimonals'})
+	if request.method == 'POST':
+		form = CommentForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Your Review has been posted!')
+			return redirect('Testimonals')
+	else:
+		form = CommentForm(request.POST)
+	context = {
+	    'title': 'EXCSERPRO: Testimonals',
+	    'form': form,
+	    'testimonals': Testimonial.objects.all()
+	}
+	return render(request, 'main/testimonals.html', context)
 
 
 def contact(request):
