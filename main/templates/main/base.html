@@ -92,10 +92,17 @@
                                     </ul>
                                 </div>
                             </li>
+                            <li><a class="nav-link" href="{% url 'blog-home' %}">News</a></li>
                             <li><a class="nav-link" href="{% url 'About' %}">About Us</a></li>
-                            <li><a class="nav-link" href="{% url 'Gallery' %}">Gallery</a></li>
-                            <li><a class="nav-link" href="{% url 'Testimonals' %}">Testimonals</a></li>
+                            <!-- <li><a class="nav-link" href="{% url 'Gallery' %}">Gallery</a></li> -->
+                            <li><a class="nav-link" href="{% url 'Testimonals' %}">Testimonials</a></li>
                             <li><a class="nav-link" href="{% url 'Contact' %}">Contact</a></li>
+                            {% if user.is_superuser %}
+                                <li><a class="btn btn-sm btn-primary nav-link" href="{% url 'post-create' %}">Create Post</a></li>
+                            {% endif %}
+                            {% if not user.is_authenticated %}
+                                <li><a class="btn btn-sm btn-primary" href="{% url 'login' %}">Login</a></li>
+                            {% endif %}
                         </ul>
                     </nav>
                 </div>
@@ -123,14 +130,15 @@
             </div>
         </header>
 
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-
+        <div class="container">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
         {% block content %}{% endblock %}
 
         <footer class="footer">
@@ -144,7 +152,7 @@
                     <span> About the company</span> To serve and provide our customers with quality & service second to no-one. Ensure that all components that are repaired or supplied are of the best quality. Provide an efficient and professional service, reinforced by stringent quality controls. Develop and train our staff to achieve personal development by using the resources at its disposal efficiently. Provide a safe and pleasant work environment, encouraging participation and growth, mutual respect, dignity and job satisfaction.
                 </p>
                 <div class="icons">
-                    <a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://www.facebook.com/Excserpro/"><i class="fab fa-facebook" aria-hidden="true"></i></a>
                 </div>
             </div>
             <div class="footer-center col-md-4 col-sm-6">

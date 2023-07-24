@@ -1,0 +1,125 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .blog .hint {
+        width: 100%;
+        color: blue;
+        font-size: 0.7rem;
+        margin-bottom: 1.3rem;
+        padding-left: 15px;
+    }
+
+    .blog .blog-h {
+        margin-bottom: 1.4rem;
+    }
+
+    @media (min-width: 600px) {
+        .blog {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 15px;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .blog .blog-p, p {
+            font-size: 1.4rem;
+            margin-bottom: 1.3rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .blog {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 1.2rem;
+        }
+
+        .blog .blog-p, p {
+            font-size: 0.9rem;
+            margin-bottom: 1.3rem;
+        }
+    }
+
+    .blog .read {
+        font-size: 0.9rem;
+        color: #339C97;
+    }
+
+    .blog .blog-img {
+        border-radius: 20px;
+    }
+
+    .blog-btn {
+        border: 2px solid #339C97;
+        border-color: #339C97;
+        border-radius: 20px;
+        color: black;
+        margin-top: 15px !important;
+        margin-left: 5px !important;
+        background-color: transparent;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 0.6rem 1.4rem;
+    }
+
+    .blog-btn-option {
+        border: 2px solid blue;
+        border-color: blue;
+        border-radius: 20px;
+        color: black;
+        margin-top: 15px !important;
+        margin-left: 5px !important;
+        background-color: transparent;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 0.6rem 1.4rem;
+    }
+
+    .blog-btn:hover {
+        color: white;
+        background-color: #339C97;
+        border-color: #339C97;
+    }
+
+    .blog-btn-option:hover {
+        color: white;
+        background-color: red;
+        border-color: red;
+    }
+</style>
+
+<div class="header-blog">
+    <div style="align-content: center;" class="mb-5">
+        <h1 class="text-center gordita-bold">Browse <span class="gordita-bold" style="color: #f15722;">Blog</span></h1>
+    </div>
+    {% for post in posts %}
+    <div class="row blog">
+        <span class="hint gordita-regular">Latest Post</span>
+        <div style="position: static;" class="col-md-6 mb-3">
+            <h3 class="blog-h mb-2">{{ post.title }}</h3>
+<div class="border border-top-0 border-left-0 border-right-0 pb-2" style="display: flex; align-items: center; margin-bottom: 20px;">
+    <img style="margin-right: 10px; border-radius: 50%;" width="30" height="30" src="{{ post.author.profile.image.url }}" alt="author">
+    <span style="font-size: 0.9rem;" class="gordita-regular date">{{ post.author.username }}<span style="font-weight:700;font-size:larger; margin: 4px;"> &centerdot; </span>{{ post.date_posted }}</span>
+    {% if user.is_superuser %}
+        <div style="margin-left: auto;">
+            <a href="{% url 'post-update' post.id %}" class="btn btn-sm btn-primary rounded mr-1">EDIT</a>
+            <a href="{% url 'post-delete' post.id %}" class="btn btn-sm btn-danger rounded mr-1">DELETE</a>
+        </div>
+    {% endif %}
+</div>
+
+
+            <p class="blog-p">{{ post.caption }}</p>
+        </div>
+        <div class="col-md-6 mb-3">
+            <img src="{{ post.thumbnail.url }}" class="img-fluid blog-img">
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

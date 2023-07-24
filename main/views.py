@@ -20,21 +20,26 @@ def gallery(request):
 	return render(request, 'main/gallery.html', {'title': 'EXCSERPRO: Gallery'})
 
 
+
 def testimonals(request):
+	testimonals = Testimonial.objects.all().order_by('-date_posted')
+
 	if request.method == 'POST':
 		form = CommentForm(request.POST)
+		if not request.user.is_authenticated:
+		    next_page = request.path
+		    return redirect(f'/login/?next={next_page}')
+
 		if form.is_valid():
-			form.save()
-			messages.success(request, 'Your Review has been posted!')
-			return redirect('Testimonals')
+		    testimonial = form.save(commit=False)
+		    testimonial.author = request.user  # Assuming you are using the built-in authentication system
+		    testimonial.save()
+		    messages.success(request, f'Your comment has been posted!')
+		    return redirect('Testimonals')
 	else:
-		form = CommentForm(request.POST)
-	context = {
-	    'title': 'EXCSERPRO: Testimonals',
-	    'form': form,
-	    'testimonals': Testimonial.objects.all()
-	}
-	return render(request, 'main/testimonals.html', context)
+	    form = CommentForm()
+
+	return render(request, 'main/testimonals.html', {'form': form, 'testimonals': testimonals})
 
 
 def contact(request):

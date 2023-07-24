@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<style>
+        .wrapper-forms {
+            background-color: white;
+            width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+	</style>
+	<div class="wrapper-forms border rounded">
+        <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <div class="mb-4 text-center">
+                    <legend>
+                        Blog Post
+                    </legend>
+                </div>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Post</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
