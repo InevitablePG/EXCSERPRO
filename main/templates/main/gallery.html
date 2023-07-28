@@ -10,4 +10,13 @@
 	    <h4 style="background: rgba(0, 0, 0, 0.5);" class="colored-bottom-border gordita-regular">EXCELLENT SERVICE PROVIDER</h4>
 	    <h1 style="background: rgba(0, 0, 0, 0.5);" class="gordita-bold">GALLERY</h1>
 	</div>
+	<div class="container">
+		<div class="row">
+			{% for object in object_list %}
+				<div class="col-md-3 mb-3">
+					<img class="img-fluid rounded" src="{{ object.image.url }}">
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock content %}

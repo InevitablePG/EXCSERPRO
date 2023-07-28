@@ -1,7 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Testimonial
+from .models import Testimonial, Gallery
 from .forms import CommentForm
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView
+)
 
 
 def home(request):
@@ -16,9 +23,15 @@ def services(request):
 	return render(request, 'main/services.html', {'title': 'EXCSERPRO: Our Services'})
 
 
-def gallery(request):
-	return render(request, 'main/gallery.html', {'title': 'EXCSERPRO: Gallery'})
+class GalleryListView(ListView):
+	model = Gallery
+	template_name = 'main/gallery.html'  # <app>/<model>_<viewtype>.html
+	ordering = ['-date_posted']
 
+	def get_context_data(self, **kwargs):
+	    context = super().get_context_data(**kwargs)
+	    context['title'] = 'EXCSERPRO: Gallery'
+	    return context
 
 
 def testimonals(request):
