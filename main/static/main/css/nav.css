@@ -50,7 +50,6 @@ button {
 }
 
 #nav-menu {
-    border-bottom: var(--border);
 }
 
 .nav-container {
@@ -85,8 +84,8 @@ button {
 }
 
 .menu-bar .nav-link {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.02rem;
+    font-weight: bold;
     letter-spacing: -0.6px;
     padding: 0.3rem;
     min-width: 60px;

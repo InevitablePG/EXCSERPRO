@@ -50,11 +50,10 @@
             <div style="background-color: #f15722; color: #ffffff;" class="d-flex flex-row pt-3">
                 <div style="width: 50%;" class="d-flex col-md-6 col-sm-6 align-items-center">
                     <i class="fa fa-phone pb-3 mr-1"></i>
-                    <p style="font-weight: bold; font-size: 14px; line-height: 2;">017 632 1444</p>
+                    <p style="font-weight: bold; font-size: 14px;">017 632 1444</p>
                 </div>
-                <div style="width: 50%;" class="d-flex col-md-6 col-sm-6 align-items-center">
-                    <i class="fa fa-envelope pb-3 mr-2"></i>
-                    <p style="font-weight: bold; font-size: 15px; line-height: 2;"><a href="#">info@excserpro.co.za</a></p>
+                <div style="width: 50%;">
+                    <span class="mr-2" style="font-weight: bold; font-size: 14px; float: right;"><i style="font-size: 16px;" class="fa fa-envelope pb-3 mr-2"></i><a href="#">info@excserpro.co.za</a></span>
                 </div>
             </div>
             <div class="nav-container">
@@ -94,14 +93,11 @@
                             </li>
                             <li><a class="nav-link" href="{% url 'blog-home' %}">News</a></li>
                             <li><a class="nav-link" href="{% url 'About' %}">About Us</a></li>
-                            <!-- <li><a class="nav-link" href="{% url 'Gallery' %}">Gallery</a></li> -->
+                            <li><a class="nav-link" href="{% url 'Gallery' %}">Gallery</a></li>
                             <li><a class="nav-link" href="{% url 'Testimonals' %}">Testimonials</a></li>
                             <li><a class="nav-link" href="{% url 'Contact' %}">Contact</a></li>
                             {% if user.is_superuser %}
                                 <li><a class="btn btn-sm btn-primary nav-link" href="{% url 'post-create' %}">Create Post</a></li>
-                            {% endif %}
-                            {% if not user.is_authenticated %}
-                                <li><a class="btn btn-sm btn-primary" href="{% url 'login' %}">Login</a></li>
                             {% endif %}
                         </ul>
                     </nav>
@@ -118,7 +114,7 @@
                             </button>
                         {% else %}
                             <button style="background-color: #f15722; color: white; font-weight: 500; font-size: 1rem;" class="btn btn-sm">
-                                <a href="{% url 'Contact' %}">Contact</a>
+                                <a style="text-decoration: none !important; font-weight: bold;" href="{% url 'Contact' %}">Contact</a>
                             </button>
                         {% endif %}
                     </div>
