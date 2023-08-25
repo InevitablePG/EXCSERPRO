@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
 from .models import Testimonial, Gallery
 from .forms import CommentForm
@@ -34,6 +35,29 @@ class GalleryListView(ListView):
 	    return context
 
 
+class GalleryCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+	model = Gallery
+	fields = ['image']
+	template_name = 'blog/new_post.html'
+	success_url = '/gallery'
+
+	def form_valid(self, form):
+		form.instance.author = self.request.user
+		return super().form_valid(form)
+
+	def test_func(self):
+	    return self.request.user.is_staff
+
+
+class GalleryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Gallery
+    template_name = 'blog/post_confirm_delete.html'
+    success_url = '/gallery'
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+
 def testimonals(request):
 	testimonals = Testimonial.objects.all().order_by('-date_posted')
 
@@ -41,6 +65,7 @@ def testimonals(request):
 		form = CommentForm(request.POST)
 		if not request.user.is_authenticated:
 		    next_page = request.path
+		    messages.info(request, f'Please login first, or register if you dont have an account.')
 		    return redirect(f'/login/?next={next_page}')
 
 		if form.is_valid():

@@ -36,8 +36,10 @@
         <div class="wrapper-forms">
             {% if messages %}
                 {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }}">
-                        {{ message }}
+                    <div class="alert alert-block alert-{{ message.tags }}">
+                        <ul class="m-0">
+                            <li>{{ message }}</li>
+                        </ul>
                     </div>
                 {% endfor %}
             {% endif %}
