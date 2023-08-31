@@ -5,148 +5,103 @@
 		.full-width-bg {
 			background-image: url("{% static 'main/images/auto.png' %}");
 		}
+
+        section {
+            padding: 2rem 20%;
+        }
+        
+        section:nth-child(2n) {
+            background: #f15722;
+            color: white;
+            clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
+            padding: 4rem 20%;
+        }
+        
+        .our-services {
+            margin-top: 10rem !important;
+            margin: 0;
+            font: 20px/2.2 system-ui;
+        }
+        .our-services i {
+            font-size: 30px;
+            border: 1px solid white;
+            padding: 11px;
+            border-radius: 50%;
+            margin: 15px auto;
+        }
 	</style>
 
 	<div class="full-width-bg mb-5">
-	    <h4 style="background: rgba(0, 0, 0, 0.5);" class="colored-bottom-border gordita-regular">EXCELLENT SERVICE PROVIDER</h4>
-	    <h1 style="background: rgba(0, 0, 0, 0.5);" class="gordita-bold">Our Services</h1>
+	    <h1 style="background: rgba(0, 0, 0, 0.5);" class="gordita-bold mb-5">Our Services</h1>
+	    <h4 style="background: rgba(0, 0, 0, 0.5);" class="colored-bottom-border gordita-regular">AUTO ELECTRICAL & MECHANICAL</h4>
 	</div>
-
-	<div>
-		<style>
-            .mecha, .autom {
-                background-image: url('{% static 'main/images/03.jpg' %}');
-            }
-		</style>
-		<section class="service-grid pb-5 pt-5">
-            <div class="container-fluid">
-                <div class="row">
-                	<div class="col-md-6 text-center mb-5">
-                        <div class="service-title mb-5">
-                            <h3 class="gordita-bold colored-bottom-border">Auto Electrical</h3>
-                        </div>
-		                <div class="row">
-		                    <div class="col-lg-6 col-md-6 text-center mb-3">
-		                        <div class="service-wrap autom">
-		                            <div class="service-icon">
-		                                <i class="fas fa-wrench"></i>
-		                            </div>
-		                            <h4>Starter Repair</h4>
-		                            <p>Expert starter repair and maintenance services to get you back on the road in no time.</p>
-		                            <a href="{% url 'Contact' %}">Learn More</a>
-		                        </div>
-		                    </div>
-		                    <div class="col-lg-6 col-md-6 text-center mb-3">
-		                        <div class="service-wrap autom">
-		                            <div class="service-icon">
-		                                <i class="fas fa-wrench"></i>
-		                            </div>
-		                            <h4>Alternator Repairs</h4>
-		                            <p>Efficient alternator repair services to keep your vehicle's electrical system in top shape.</p>
-		                            <a href="{% url 'Contact' %}">Learn More</a>
-		                        </div>
-		                    </div>
-		                    <div class="col-lg-6 col-md-6 text-center mb-3">
-		                        <div class="service-wrap autom">
-		                            <div class="service-icon">
-		                                <i class="fas fa-wrench"></i>
-		                            </div>
-		                            <h4>Wiring & Rewinding</h4>
-		                            <p>Specialized wiring and rewinding solutions for a reliable and safe electrical system.</p>
-		                            <a href="{% url 'Contact' %}">Learn More</a>
-		                        </div>
-		                    </div>
-		                    <div class="col-lg-6 col-md-6 text-center mb-3">
-		                        <div class="service-wrap autom">
-		                            <div class="service-icon">
-		                                <i class="fas fa-wrench"></i>
-		                            </div>
-		                            <h4>Auto Electrical Spares</h4>
-		                            <p>Quality auto electrical spares available to keep your vehicle running smoothly.</p>
-		                            <a href="{% url 'Contact' %}">Learn More</a>
-		                        </div>
-		                    </div>
-		                    <div class="col-lg-6 col-md-6 text-center mb-3">
-		                        <div class="service-wrap autom">
-		                            <div class="service-icon">
-		                                <i class="fas fa-wrench"></i>
-		                            </div>
-		                            <h4>Battery Testing & Charging</h4>
-		                            <p>Professional battery testing and charging services for optimal battery performance.</p>
-		                            <a href="{% url 'Contact' %}">Learn More</a>
-		                        </div>
-		                    </div>
-		                </div>
-		            </div>
-		            <div class="col-md-6 text-center mb-5">
-                        <div class="service-title mb-5">
-                            <h3 class="gordita-bold colored-bottom-border">Mechanical</h3>
-                        </div>
-		                <div class="row">
-		                    <div class="col-lg-6 col-md-6 text-center mb-3">
-		                        <div class="service-wrap mecha">
-		                            <div class="service-icon">
-		                                <i class="fas fa-wrench"></i>
-		                            </div>
-		                            <h4>Car Service (Minor/Major)</h4>
-		                            <p>Comprehensive car service, from minor to major, to ensure your vehicle's peak performance.</p>
-		                            <a href="{% url 'Contact' %}">Learn More</a>
-		                        </div>
-		                    </div>
-		                    <div class="col-lg-6 col-md-6 text-center mb-3">
-		                        <div class="service-wrap mecha">
-		                            <div class="service-icon">
-		                                <i class="fas fa-wrench"></i>
-		                            </div>
-		                            <h4>Engine Overhaul</h4>
-		                            <p>Skilled engine overhaul services to revitalize your vehicle's power and efficiency.</p>
-		                            <a href="{% url 'Contact' %}">Learn More</a>
-		                        </div>
-		                    </div>
-		                    <div class="col-lg-6 col-md-6 text-center mb-3">
-		                        <div class="service-wrap mecha">
-		                            <div class="service-icon">
-		                                <i class="fas fa-wrench"></i>
-		                            </div>
-		                            <h4>Gearbox Repairs</h4>
-		                            <p>Expert gearbox repairs to maintain smooth gear transitions and extend the life of your transmission.</p>
-		                            <a href="{% url 'Contact' %}">Learn More</a>
-		                        </div>
-		                    </div>
-		                    <div class="col-lg-6 col-md-6 text-center mb-3">
-		                        <div class="service-wrap mecha">
-		                            <div class="service-icon">
-		                                <i class="fas fa-wrench"></i>
-		                            </div>
-		                            <h4>Clutch Repairs</h4>
-		                            <p>Specialized clutch repairs to ensure precise control and optimal driving experience.</p>
-		                            <a href="{% url 'Contact' %}">Learn More</a>
-		                        </div>
-		                    </div>
-		                    <div class="col-lg-6 col-md-6 text-center mb-3">
-		                        <div class="service-wrap mecha">
-		                            <div class="service-icon">
-		                                <i class="fas fa-wrench"></i>
-		                            </div>
-		                            <h4>Suspension Repairs</h4>
-		                            <p>Efficient suspension repairs for a smooth and comfortable ride on any road.</p>
-		                            <a href="{% url 'Contact' %}">Learn More</a>
-		                        </div>
-		                    </div>
-		                    <div class="col-lg-6 col-md-6 text-center mb-3">
-		                        <div class="service-wrap mecha">
-		                            <div class="service-icon">
-		                                <i class="fas fa-wrench"></i>
-		                            </div>
-		                            <h4>Car Diagnosis</h4>
-		                            <p>Advanced car diagnostic services to pinpoint issues and provide precise solutions for your vehicle.</p>
-		                            <a href="{% url 'Contact' %}">Learn More</a>
-		                        </div>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-            </div>
+    
+    <div class="our-services">
+        <section>
+            <i class="fa-solid fa-car"></i>
+            <h4 class="gordita-bold">Starter Repair</h4>
+            <p>Expert starter repair and maintenance services to get you back on the road in no time.</p>
+            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
+        </section>
+        <section>
+            <i class="fa-solid fa-car"></i>
+            <h4 class="gordita-bold">Alternator Repairs</h4>
+            <p>Efficient alternator repair services to keep your vehicle's electrical system in top shape.</p>
+            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
+        </section>
+        <section>
+            <i class="fa-solid fa-car"></i>
+            <h4 class="gordita-bold">Wiring & Rewinding</h4>
+            <p>Specialized wiring and rewinding solutions for a reliable and safe electrical system.</p>
+            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
+        </section>
+        <section>
+            <i class="fa-solid fa-car"></i>
+            <h4 class="gordita-bold">Auto Electrical Spares</h4>
+            <p>Quality auto electrical spares available to keep your vehicle running smoothly.</p>
+            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
+        </section>
+        <section>
+            <i class="fa-solid fa-car"></i>
+            <h4 class="gordita-bold">Battery Testing & Charging</h4>
+            <p>Professional battery testing and charging services for optimal battery performance.</p>
+            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
+        </section>
+        <section>
+            <i class="fa-solid fa-car"></i>
+            <h4 class="gordita-bold">Car Service (Minor/Major)</h4>
+            <p>Comprehensive car service, from minor to major, to ensure your vehicle's peak performance.</p>
+            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
+        </section>
+        <section>
+            <i class="fa-solid fa-car"></i>
+            <h4 class="gordita-bold">Engine Overhaul</h4>
+            <p>Skilled engine overhaul services to revitalize your vehicle's power and efficiency.</p>
+            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
+        </section>
+        <section>
+            <i class="fa-solid fa-car"></i>
+            <h4 class="gordita-bold">Gearbox Repairs</h4>
+            <p>Expert gearbox repairs to maintain smooth gear transitions and extend the life of your transmission.</p>
+            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
+        </section>
+        <section>
+            <i class="fa-solid fa-car"></i>
+            <h4 class="gordita-bold">Clutch Repairs</h4>
+            <p>Specialized clutch repairs to ensure precise control and optimal driving experience.</p>
+            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
+        </section>
+        <section>
+            <i class="fa-solid fa-car"></i>
+            <h4 class="gordita-bold">Suspension Repairs</h4>
+            <p>Efficient suspension repairs for a smooth and comfortable ride on any road.</p>
+            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
+        </section>
+        <section>
+            <i class="fa-solid fa-car"></i>
+            <h4 class="gordita-bold">Car Diagnosis</h4>
+            <p>Advanced car diagnostic services to pinpoint issues and provide precise solutions for your vehicle.</p>
+            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
     </div>
 {% endblock content %}

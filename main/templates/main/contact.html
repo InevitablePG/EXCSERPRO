@@ -1,44 +1,69 @@
 {% extends "main/base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
 	<style>
+	    label {
+	        font-weight: bold;
+	    }
+	
 		.full-width-bg {
 			background-image: url("{% static 'main/images/auto.png' %}");
 		}
+
+        .section-div {
+            margin-top: 10rem !important;
+            margin: 0;
+            font: 20px/2.2 system-ui;
+        }
+        
+        section {
+            padding: 2rem 20%;
+        }
+        
+        section:nth-child(2n+1) {
+            background: #f15722;
+            color: white;
+            clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
+            padding: 2rem 20%;
+        }
+        
+        section ul li {
+            font-size: 14px;
+            margin-bottom: 1.2rem;
+        }
+        
+        form button {
+            background-color: #f15722;
+            color: white;
+            font-weight: bold !important;
+            font-size: 1rem;
+        }
 	</style>
 	<div class="full-width-bg mb-5">
 	    <h4 style="background: rgba(0, 0, 0, 0.5);" class="colored-bottom-border gordita-regular">EXCELLENT SERVICE PROVIDER</h4>
 	    <h1 style="background: rgba(0, 0, 0, 0.5);" class="gordita-bold">CONTACT US</h1>
 	</div>
-
-    <!-- Main Content -->
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6 mb-5">
-                <h2>Contact Information</h2>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-map-marker-alt"></i> 7 Columbia Road, Evander 2285, South Africa</li>
-                    <li><i class="fas fa-phone-alt"></i> Phone: 017 632 1444 </li>
-                    <li><i class="fas fa-envelope"></i> Email: info@excserpro.co.za</li>
-                    <li><a href="https://wa.me/11234567890" target="_blank" class="whatsapp-icon"><i class="fab fa-whatsapp"></i> WhatsApp: 082 207 1723</a></li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <h2>Contact Form</h2>
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
+    
+    <div class="section-div">
+        <section>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-map-marker-alt"></i> 7 Columbia Road, Evander 2285, South Africa</li>
+                <li><i class="fas fa-phone-alt"></i> Phone: 017 632 1444 </li>
+                <li><i class="fas fa-envelope"></i> Email: info@excserpro.co.za</li>
+                <li><a href="https://wa.me/11234567890" target="_blank" class="whatsapp-icon"><i class="fab fa-whatsapp"></i> WhatsApp: 082 207 1723</a></li>
+            </ul>
+        </section>
+        <section>
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset>
+                    <legend class="gordita-bold text-center mb-4">We will get in touch!</legend>
+                    {{ form|crispy }}
+                    <button type="submit" class="btn">SUBMIT</button>
+                </fieldset>
+            </form>
+        </section>
     </div>
 
     <!-- Add Font Awesome Icons -->
