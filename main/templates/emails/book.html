@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <title>Booking for Mega</title>
+
+        <style>
+
+            h5 {
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .container-box, .container-footer {
+                width: 400px;
+                margin: 40px auto;
+                border-radius: 5px;
+            }
+
+            .media {
+                margin-bottom: 0.5rem;
+            }
+
+            .media i {
+                margin-right: 1.1rem;
+                margin-top: 0.9rem;
+            }
+
+            .media h6 {
+                font-weight: bold;
+            }
+
+            .media p {
+                font-size: 13px;
+            }
+
+            .container-footer {
+                display: block;
+            }
+
+            .container-footer img {
+                margin: 20px auto;
+                width: 160px;
+                height: auto;
+                display: flex;
+            }
+
+            .container-footer p {
+                text-align: center;
+                font-size: 15px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="container mt-3">
+            
+            <h5>New Booking!</h6>
+            <div class="container-box border p-4">
+                <ul class="list-unstyled">
+
+                    <li class="media">
+                        <i class="fa-solid fa-signature"></i>
+                        <div class="media-body">
+                            <h6 class="mt-0 mb-1">Full name</h6>
+                            <p>Progress Nqubeko Magayela</p>
+                        </div>
+                    </li>
+
+                    <li class="media">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="media-body">
+                            <h6 class="mt-0 mb-1">Email</h6>
+                            <p>magayela.np@gmail.com</p>
+                        </div>
+                    </li>
+
+                    <li class="media">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="media-body">
+                            <h6 class="mt-0 mb-1">Phone number</h6>
+                            <p>+27 69 567 1444</p>
+                        </div>
+                    </li>
+
+                    <li class="media">
+                        <i class="fa-solid fa-car"></i>
+                        <div class="media-body">
+                            <h6 class="mt-0 mb-1">Issue</h6>
+                            <p>Starter Repair</p>
+                        </div>
+                    </li>
+
+                    <li class="media">
+                        <i class="fa-solid fa-message"></i>
+                        <div class="media-body">
+                            <h6 class="mt-0 mb-1">Message</h6>
+                            <p>Hi, I have a starter problem in my truck. Do you guys fix starters?</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="container-footer">
+                <img src="{% static 'main/images/excserpro_logo.png' %}" alt="EXCSERPRO">
+                <p> EXCSERPRO &copy; 2023, All Rights Reserved</p>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

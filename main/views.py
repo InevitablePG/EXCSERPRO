@@ -11,6 +11,10 @@ from django.views.generic import (
     DeleteView
 )
 
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
 
 def home(request):
     return render(request, 'main/home.html', {'title': 'EXCSERPRO: Excellent Service Provider'})

@@ -14,9 +14,13 @@
             background: #f15722;
             color: white;
             clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
-            padding: 4rem 20%;
+            padding: 2rem 20%;
         }
         
+        section a {
+            text-decoration: none;
+        }
+
         .our-services {
             margin-top: 10rem !important;
             margin: 0;
@@ -39,69 +43,80 @@
     <div class="our-services">
         <section>
             <i class="fa-solid fa-car"></i>
-            <h4 class="gordita-bold">Starter Repair</h4>
+            <a href="{% url 'Contact' %}">
+                <h4 class="gordita-bold">Starter Repair</h4>
+            </a>
             <p>Expert starter repair and maintenance services to get you back on the road in no time.</p>
-            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
         <section>
             <i class="fa-solid fa-car"></i>
-            <h4 class="gordita-bold">Alternator Repairs</h4>
+            <a href="{% url 'Contact' %}">
+                <h4 class="gordita-bold">Alternator Repairs</h4>
+            </a>
             <p>Efficient alternator repair services to keep your vehicle's electrical system in top shape.</p>
-            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
         <section>
             <i class="fa-solid fa-car"></i>
-            <h4 class="gordita-bold">Wiring & Rewinding</h4>
+            <a href="{% url 'Contact' %}">
+                <h4 class="gordita-bold">Wiring & Rewinding</h4>
+            </a>
             <p>Specialized wiring and rewinding solutions for a reliable and safe electrical system.</p>
-            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
         <section>
             <i class="fa-solid fa-car"></i>
-            <h4 class="gordita-bold">Auto Electrical Spares</h4>
+            <a href="{% url 'Contact' %}">
+                <h4 class="gordita-bold">Auto Electrical Spares</h4>
+            </a>
             <p>Quality auto electrical spares available to keep your vehicle running smoothly.</p>
-            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
         <section>
             <i class="fa-solid fa-car"></i>
-            <h4 class="gordita-bold">Battery Testing & Charging</h4>
+            <a href="{% url 'Contact' %}">
+                <h4 class="gordita-bold">Battery Testing & Charging</h4>
+            </a>
             <p>Professional battery testing and charging services for optimal battery performance.</p>
-            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
         <section>
             <i class="fa-solid fa-car"></i>
-            <h4 class="gordita-bold">Car Service (Minor/Major)</h4>
+            <a href="{% url 'Contact' %}">
+                <h4 class="gordita-bold">Car Service (Minor/Major)</h4>
+            </a>
             <p>Comprehensive car service, from minor to major, to ensure your vehicle's peak performance.</p>
-            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
         <section>
             <i class="fa-solid fa-car"></i>
-            <h4 class="gordita-bold">Engine Overhaul</h4>
+            <a href="{% url 'Contact' %}">
+                <h4 class="gordita-bold">Engine Overhaul</h4>
+            </a>
             <p>Skilled engine overhaul services to revitalize your vehicle's power and efficiency.</p>
-            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
         <section>
             <i class="fa-solid fa-car"></i>
-            <h4 class="gordita-bold">Gearbox Repairs</h4>
+            <a href="{% url 'Contact' %}">
+                <h4 class="gordita-bold">Gearbox Repairs</h4>
+            </a>
             <p>Expert gearbox repairs to maintain smooth gear transitions and extend the life of your transmission.</p>
-            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
         <section>
             <i class="fa-solid fa-car"></i>
-            <h4 class="gordita-bold">Clutch Repairs</h4>
+            <a href="{% url 'Contact' %}">
+                <h4 class="gordita-bold">Clutch Repairs</h4>
+            </a>
             <p>Specialized clutch repairs to ensure precise control and optimal driving experience.</p>
-            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
         <section>
             <i class="fa-solid fa-car"></i>
-            <h4 class="gordita-bold">Suspension Repairs</h4>
+            <a href="{% url 'Contact' %}">
+                <h4 class="gordita-bold">Suspension Repairs</h4>
+            </a>
             <p>Efficient suspension repairs for a smooth and comfortable ride on any road.</p>
-            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
         <section>
             <i class="fa-solid fa-car"></i>
-            <h4 class="gordita-bold">Car Diagnosis</h4>
+            <a href="{% url 'Contact' %}">
+                <h4 class="gordita-bold">Car Diagnosis</h4>
+            </a>
             <p>Advanced car diagnostic services to pinpoint issues and provide precise solutions for your vehicle.</p>
-            <a class="btn btn-sm btn-outline-primary" href="{% url 'Contact' %}" >CONTACT</a>
         </section>
     </div>
 {% endblock content %}
