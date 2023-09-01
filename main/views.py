@@ -16,6 +16,23 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 
 
+def new_booking(context) -> None:
+    subject = f"New Booking From {context['full_name']}"
+    from_email = 'fullstack.python.dev@gmail.com'
+    recipient_list = ['fullstack.python.dev@gmail.com']
+    
+    html_content = render_to_string('emails/book.html', context)
+    
+    text_content = strip_tags(html_content)
+    
+    email = EmailMultiAlternatives(subject, text_content, from_email, recipient_list)
+
+    email.attach_alternative(html_content, "text/html")
+
+    email.send()
+
+
+
 def home(request):
     return render(request, 'main/home.html', {'title': 'EXCSERPRO: Excellent Service Provider'})
 
@@ -96,6 +113,14 @@ def contact(request):
             issues = form.cleaned_data['issues']
             message = form.cleaned_data['message']
             print(full_name, email, phone_number, issues, message)
+            temp_context = {
+                'full_name': full_name,
+                'email': email,
+                'phone_number': phone_number,
+                'issues': issues,
+                'message': message
+            }
+            new_booking(temp_context)
     else:
         form = BookingForm()
         
