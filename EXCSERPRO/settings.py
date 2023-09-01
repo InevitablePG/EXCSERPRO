@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'crispy_bootstrap4',
+    'captcha',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,6 +141,8 @@ LOGIN_URL = '/login'
 
 LOGIN_REDIRECT_URL = 'Testimonals'
 
+RECAPTCHA_PUBLIC_KEY = '6LcKqtIkAAAAAOi77P9HiyyfqSGLsc9gkMRkS5hn'
+RECAPTCHA_PRIVATE_KEY = '6LcKqtIkAAAAAFsho4jdlhjmwQobi8DSGeIqsaC7'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

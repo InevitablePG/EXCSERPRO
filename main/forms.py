@@ -1,5 +1,7 @@
 from django import forms
 from .models import Testimonial
+from captcha.fields import ReCaptchaField
+
 
 class BookingForm(forms.Form):
     ISSUE_CHOICES = [
@@ -22,6 +24,7 @@ class BookingForm(forms.Form):
     phone_number = forms.CharField(max_length=20, required=True, widget=forms.TextInput(attrs={'placeholder': 'Phone Number'}))
     issues = forms.ChoiceField(choices=ISSUE_CHOICES, required=True)
     message = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Your message here', 'rows': 4}))
+    captcha = ReCaptchaField()
 
 
 

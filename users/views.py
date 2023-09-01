@@ -7,12 +7,17 @@ from .forms import UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
 def register(request):
 	if request.user.is_authenticated:
 		return redirect('Home')
+
 	if request.method == 'POST':
 		form = UserRegistrationForm(request.POST)
+
 		if form.is_valid():
 			form.save()
 			messages.success(request, f'Accout has been created.')
-			return redirect('Testimonals')
+			return redirect('login')
+		else:
+			messages.info(request, 'Please fill in all the fields with \'*\' including the Capcha!')
+			
 	else:
 		form = UserRegistrationForm()
 	return render(request, 'users/register.html', {'form': form})

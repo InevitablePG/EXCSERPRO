@@ -1,56 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Booking for {{ full_name }}</title>
+        <style>
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+            }
+
+            h1, h2, h3, h4, h5, h6, p {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+
+            .heading {
+                margin-top: 4rem;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .main {
+                width: 340px;
+                margin: 40px auto;
+                padding: 1rem;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+                margin-bottom: 0;
+            }
+
+            li {
+                margin-bottom: 2rem;
+            }
+
+            .content {
+                margin: 0 1.5rem;
+            }
+
+            .label {
+                font-weight: bold;
+                margin-top: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .disc {
+                margin: 0; 
+                font-size: 14px;
+            }
+
+            .footer {
+                width: 400px;
+                margin: 40px auto;
+                text-align: center;
+            }
+
+            .footer-p {
+                margin: 0;
+                font-size: 12px;
+            }
+        </style>
     </head>
+
     <body>
-        <div style="margin-top: 1rem;">
-            <h3 style="font-weight: bold; text-align: center;">New Booking!</h3>
-            <div style="width: 360px; margin: 40px auto; border-radius: 5px; border: 1px solid #ccc; padding: 1rem;">
-                <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
-                    
-                    <li style="margin-bottom: 1.5rem;">
-                        <div style="margin-left: 1.1rem;">
-                            <h4 style="font-weight: bold; margin-top: 0; margin-bottom: 0.5rem;">Full name</h4>
-                            <p style="margin: 0; font-size: 14px;">{{ full_name }}</p>
+        <div class="container">
+            <h3 class="heading">New Booking!</h3>
+            <div class="main">
+                
+                <ul>
+                    <li>
+                        <div class="content">
+                            <h4 class="label">Full name</h4>
+                            <p class="disc">{{ full_name }}</p>
                         </div>
                     </li>
-                    
-                    <li style="margin-bottom: 1.5rem;">
-                        <div style="margin-left: 1.1rem;">
-                            <h4 style="font-weight: bold; margin-top: 0; margin-bottom: 0.5rem;">Email</h4>
-                            <p style="margin: 0; font-size: 14px;">{{ email }}</p>
-                        </div>
-                    </li>
-                    
-                    <li style="margin-bottom: 1.5rem;">
-                        <div style="margin-left: 1.1rem;">
-                            <h4 style="font-weight: bold; margin-top: 0; margin-bottom: 0.5rem;">Phone number</h4>
-                            <p style="margin: 0; font-size: 14px;">{{ phone_number }}</p>
-                        </div>
-                    </li>
-                    
-                    <li style="margin-bottom: 1.5rem;">
-                        <div style="margin-left: 1.1rem;">
-                            <h4 style="font-weight: bold; margin-top: 0; margin-bottom: 0.5rem;">Issue</h4>
-                            <p style="margin: 0; font-size: 14px;">{{ issues }}</p>
-                        </div>
-                    </li>
-                    
-                    <li style="margin-bottom: 1.5rem;">
-                        <div style="margin-left: 1.1rem;">
-                            <h4 style="font-weight: bold; margin-top: 0; margin-bottom: 0.5rem;">Message</h4>
-                            <p style="margin: 0; font-size: 14px;">{{ message }}</p>
-                        </div>
-                    </li>
-                    
                 </ul>
+                
+                <ul>
+                    <li>
+                        <div class="content">
+                            <h4 class="label">Email</h4>
+                            <p class="disc">{{ email }}</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <div class="content">
+                            <h4 class="label">Phone number</h4>
+                            <p class="disc">{{ phone_number }}</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <div class="content">
+                            <h4 class="label">Issues</h4>
+                            <p class="disc">{{ issues }}</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul>
+                    <li>
+                        <div class="content">
+                            <h4 class="label">Message</h4>
+                            <p class="disc">{{ message }}</p>
+                        </div>
+                    </li> 
+                </ul>
+
             </div>
-            <div style="width: 400px; margin: 40px auto; text-align: center;">
-                <p style="margin: 0; font-size: 12px;">EXCSERPRO &copy; 2023, All Rights Reserved</p>
+
+            <div class="footer">
+                <p class="footer-p">EXCSERPRO &copy; 2023, All Rights Reserved</p>
             </div>
+
         </div>
     </body>
 </html>

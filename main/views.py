@@ -104,15 +104,14 @@ def testimonals(request):
 def contact(request):
     if request.method == "POST":
         form = BookingForm(request.POST)
+
         if form.is_valid():
-            # Access the submitted data
-            
             full_name = form.cleaned_data['full_name']
             email = form.cleaned_data['email']
             phone_number = form.cleaned_data['phone_number']
             issues = form.cleaned_data['issues']
             message = form.cleaned_data['message']
-            print(full_name, email, phone_number, issues, message)
+
             temp_context = {
                 'full_name': full_name,
                 'email': email,
@@ -121,6 +120,12 @@ def contact(request):
                 'message': message
             }
             new_booking(temp_context)
+            messages.success(request, f'Thank you {full_name} for your booking request, we will get in touch with you shortly.')
+            return redirect('Home')
+
+        else:
+            messages.info(request, 'Please fill in all the fields with \'*\' including the Capcha!')
+
     else:
         form = BookingForm()
         
