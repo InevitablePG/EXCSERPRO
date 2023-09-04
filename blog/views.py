@@ -11,25 +11,30 @@ from .models import Post
 
 
 class PostListView(ListView):
-	model = Post
-	template_name = 'blog/post_list.html'  # <app>/<model>_<viewtype>.html
-	context_object_name = 'posts'
-	ordering = ['-date_posted']
+    model = Post
+    template_name = 'blog/post_list.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Blog | EXCSERPRO : Excellent Service Provider'
+        return context
 
 
 
 class PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
-	model = Post
-	fields = ['thumbnail', 'title', 'caption']
-	template_name = 'blog/new_post.html'
-	success_url = '/blog'
+    model = Post
+    fields = ['thumbnail', 'title', 'caption']
+    template_name = 'blog/new_post.html'
+    success_url = '/blog'
 
-	def form_valid(self, form):
-		form.instance.author = self.request.user
-		return super().form_valid(form)
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
-	def test_func(self):
-	    return self.request.user.is_superuser
+    def test_func(self):
+        return self.request.user.is_superuser
 
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

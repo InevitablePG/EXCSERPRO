@@ -34,15 +34,15 @@ def new_booking(context) -> None:
 
 
 def home(request):
-    return render(request, 'main/home.html', {'title': 'EXCSERPRO: Excellent Service Provider'})
+    return render(request, 'main/home.html', {'title': 'EXCSERPRO : Excellent Service Provider | Secunda, South Africa'})
 
 
 def about(request):
-    return render(request, 'main/about.html', {'title': 'EXCSERPRO: About Us'})
+    return render(request, 'main/about.html', {'title': 'About Us |  EXCSERPRO : Excellent Service Provider'})
 
 
 def services(request):
-    return render(request, 'main/services.html', {'title': 'EXCSERPRO: Our Services'})
+    return render(request, 'main/services.html', {'title': 'Services |  EXCSERPRO : Excellent Service Provider'})
 
 
 class GalleryListView(ListView):
@@ -52,7 +52,7 @@ class GalleryListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'EXCSERPRO: Gallery'
+        context['title'] = 'Gallery | EXCSERPRO : Excellent Service Provider'
         return context
 
 
@@ -98,7 +98,7 @@ def testimonals(request):
     else:
         form = CommentForm()
 
-    return render(request, 'main/testimonals.html', {'form': form, 'testimonals': testimonals})
+    return render(request, 'main/testimonals.html', {'form': form, 'testimonals': testimonals, 'title': "Testimonials |  EXCSERPRO : Excellent Service Provider"})
 
 
 def contact(request):
@@ -131,6 +131,6 @@ def contact(request):
         
     context = {
         'form': form,
-        'title': 'EXCSERPRO: Contact Us'
+        'title': 'Contact & Appointment |  EXCSERPRO : Excellent Service Provider'
     }
     return render(request, 'main/contact.html', context)
