@@ -5,16 +5,32 @@
 		.full-width-bg {
 			background-image: url("{% static 'main/images/auto.png' %}");
 		}
+
+	    .create-button {
+	        color: black;
+	        font-weight: bold;
+	        background-color: #f15722;
+	        display: block;
+	        margin: 15px auto;
+	        max-width: 150px;
+	    }
 	</style>
 	<div class="full-width-bg mb-5">
 	    <h4 style="background: rgba(0, 0, 0, 0.5);" class="colored-bottom-border gordita-regular">EXCELLENT SERVICE PROVIDER</h4>
 	    <h1 style="background: rgba(0, 0, 0, 0.5);" class="gordita-bold">GALLERY</h1>
 	</div>
+
+    {% if user.is_superuser %}
+        <div>
+            <a class="create-button btn" href="{% url 'Gallery-create' %}">UPLOAD IMAGE</a>
+        </div>
+    {% endif %}
+
 	<div class="container">
 		<div class="row">
 			{% for object in object_list %}
 				<div {% if user.is_superuser %}onclick="location.href='{% url 'Gallery-delete' object.pk %}';"{% endif %} class="col-md-3 mb-3">
-					<img class="img-fluid rounded" src="{{ object.image.url }}">
+					<img class="img-fluid rounded" src="{{ object.image.url }}" loading="lazy">
 				</div>
 			{% endfor %}
 		</div>

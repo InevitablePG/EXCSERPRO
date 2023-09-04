@@ -5,8 +5,7 @@ from PIL import Image
 
 
 class Testimonial(models.Model):
-    city = models.CharField(max_length=100)
-    text = models.TextField()
+    comment = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 

@@ -21,6 +21,43 @@
 		  margin-right: 20px;
 		  margin-bottom: 16px;
 		}
+
+		.modal-title {
+			font-weight: bold;
+		}
+
+		.card {
+			padding: 1rem;
+			border-radius: 7px;
+			margin: 40px auto !important;
+			text-align: center;
+			width: 20rem !important;
+			box-shadow: 0 1rem 3rem rgba(0, 0, 0, .20) !important;
+		}
+
+		.time {
+			font-size: 11px;
+			margin-bottom: 0 !important;
+		}
+
+		.card-text {
+			font-size: 18px !important;
+		}
+
+		.account img {
+			width: 60px;
+			margin: 20px auto !important;
+			display: block;
+			border-radius: 50%;
+		}
+
+		.account h6 {
+			font-weight: bold;
+		}
+
+		.account p {
+			font-size: 15px;
+		}
 	</style>
 	<div class="full-width-bg mb-5">
 	    <h4 style="background: rgba(0, 0, 0, 0.5);" class="colored-bottom-border gordita-regular">EXCELLENT SERVICE PROVIDER</h4>
@@ -33,7 +70,7 @@
 		        {% csrf_token %}
 	            <div class="modal-content">
 	                <div class="modal-header">
-	                    <h5 style="font-weight: bold;" class="modal-title" id="exampleModalLabel">Leave a review*</h5>
+	                    <h5 class="modal-title" id="exampleModalLabel">Leave a review*</h5>
 	                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                        <span aria-hidden="true">&times;</span>
 	                    </button>
@@ -58,26 +95,21 @@
     </div>
 	<div class="container">
 		<h4 class="mb-3 gordita-bold">Quality in a service or product is not what you put into it. It is what the customer gets out of it. Please, leave us your review.</h4>
-		<button style="font-weight: 500; font-size: 1rem;" type="button" class="btn btn-primary mb-5 mt-5" data-toggle="modal" data-target="#exampleModal">Leave us a review</button>
+		<button style="font-weight: 500; background-color: #f15722; font-size: 1rem;" type="button" class="btn mb-5 mt-5" data-toggle="modal" data-target="#exampleModal">Leave us a review</button>
 	    {% for comment in testimonals %}
-            <div class="card-body p-2 border rounded mb-2">
-                <div class="d-flex flex-start">
-                    <img class="rounded-circle shadow-1-strong m-1"
-                        src="{{ comment.author.profile.image.url }}" alt="avatar" width="60"
-                        height="60" />
-                    <div>
-                        <h6 style="font-size: 0.8rem;" class="mb-1"><span style="font-size: 1rem;">{{ comment.author.username }}</span> from {{ comment.city }}</h6>
-                        <div class="d-flex align-items-center mb-3">
-                            <p class="text-muted small mb-0">
-                                {{ comment.date_posted }}
-                            </p>
-                        </div>
-                        <p class="mb-0">
-                            {{ comment.text }}
-                        </p>
-                    </div>
-                </div>
-            </div>
+
+			<div class="card">
+				<p class="text-center time">{{ comment.date_posted|date:"F d, Y" }}</p>
+				<div class="card-body">
+					<p class="card-text">"{{ comment.comment }}"</p>
+				</div>
+				<div class="account">
+					<img src="{{ comment.author.profile.image.url }}">
+					<h6>{{ comment.author.username }}</h6>
+					<p>{% if comment.author.is_superuser %}Admin{% else %}Client{% endif %}</p>
+				</div>
+			</div>
+
         {% endfor %}
     </div>
 {% endblock content %}

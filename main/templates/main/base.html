@@ -41,6 +41,10 @@
             .gordita-regular {
                 font-family:gordita_regular !important;
             }
+
+            label {
+                font-weight: bold;
+            }
         </style>
 
         <title>{% if title %}{{ title }}{% else %}EXCSERPRO{% endif %}</title>
@@ -59,7 +63,7 @@
             <div class="nav-container">
                 <div class="nav-start">
                     <a class="logo" href="/">
-                        <img src="{% static 'main/images/excserpro_logo.png' %}" width="165" height="26" alt="Excserpro Logo" />
+                        <img src="{% static 'main/images/excserpro_logo.png' %}" width="200" alt="Excserpro Logo" />
                     </a>
                     <nav class="menu">
                         <ul class="menu-bar">
@@ -72,7 +76,6 @@
                                     <ul role="menu">
                                         <li role="menuitem">
                                             <a class="dropdown-link" href="{% url 'Services' %}">
-                                                <img src="{% static 'main/images/botd.svg' %}" class="icon" />
                                                 <div>
                                                     <span class="dropdown-link-title">Auto Electrical</span>
                                                     <p>Starters, Alternators, Wiring, Rewinding, Spares, Battery Tes...</p>
@@ -81,7 +84,6 @@
                                         </li>
                                         <li role="menuitem">
                                             <a class="dropdown-link" href="{% url 'Services' %}">
-                                                <img src="{% static 'main/images/fs.svg' %}" class="icon" />
                                                 <div>
                                                     <span class="dropdown-link-title">Mechanical</span>
                                                     <p>Car Service, Engine Overhaul, Gearbox, Clutch, Suspension, Diagno...</p>
@@ -91,14 +93,11 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a class="nav-link" href="{% url 'blog-home' %}">News</a></li>
-                            <li><a class="nav-link" href="{% url 'About' %}">About Us</a></li>
-                            <li><a class="nav-link" href="{% url 'Gallery' %}">Gallery</a></li>
-                            <li><a class="nav-link" href="{% url 'Testimonals' %}">Testimonials</a></li>
                             <li><a class="nav-link" href="{% url 'Contact' %}">Contact</a></li>
-                            {% if user.is_superuser %}
-                                <li><a class="btn btn-sm btn-primary nav-link" href="{% url 'post-create' %}">Create Post</a></li>
-                            {% endif %}
+                            <li><a class="nav-link" href="{% url 'blog-home' %}">Blog</a></li>
+                            <li><a class="nav-link" href="{% url 'About' %}">About Us</a></li>
+                            <li><a class="nav-link" href="{% url 'Testimonals' %}">Testimonials</a></li>
+                            <li><a class="nav-link" href="{% url 'Gallery' %}">Gallery</a></li>
                         </ul>
                     </nav>
                 </div>

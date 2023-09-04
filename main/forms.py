@@ -31,4 +31,8 @@ class BookingForm(forms.Form):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Testimonial
-        fields = ['city', 'text']
+        fields = ['comment']
+
+    comment = forms.CharField(
+        widget=forms.Textarea(attrs={'rows': 4})
+    )
