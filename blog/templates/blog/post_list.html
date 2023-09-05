@@ -76,6 +76,23 @@
         margin: 15px auto;
         max-width: 150px;
     }
+
+    .bg-exc {
+        background-color: #f15722;
+        color: white;
+    }
+
+    .bg-exc-outline {
+        border: 1px solid #f15722;
+        background-color: transparent;
+        color: #f15722;
+    }
+
+    .paginate {
+        display: block;
+        margin: 40px auto;
+        width: 370px;
+    }
 </style>
 
 <div class="container">
@@ -113,5 +130,29 @@
         {% endfor %}
     </div>
 </div>
+
+    {% if is_paginated %}
+        <div class="paginate">
+
+            {% if page_obj.has_previous %}
+                <a class="btn btn-sm bg-exc-outline mb-4" href="?page=1">First</a>
+                <a class="btn btn-sm bg-exc-outline mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a class="btn btn-sm bg-exc mb-4" href="?page={{ num }}">{{ num }}</a>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a class="btn btn-sm bg-exc-outline mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <a class="btn btn-sm bg-exc-outline mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="btn btn-sm bg-exc-outline mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            {% endif %}
+
+        </div>
+    {% endif %}
 
 {% endblock content %}

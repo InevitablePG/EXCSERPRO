@@ -18,8 +18,8 @@ from django.utils.html import strip_tags
 
 def new_booking(context) -> None:
     subject = f"New Booking From {context['full_name']}"
-    from_email = 'fullstack.python.dev@gmail.com'
-    recipient_list = ['fullstack.python.dev@gmail.com']
+    from_email = 'EXCSERPRO'
+    recipient_list = ['accounts@excserpro.co.za']
     
     html_content = render_to_string('emails/book.html', context)
     
@@ -49,6 +49,7 @@ class GalleryListView(ListView):
     model = Gallery
     template_name = 'main/gallery.html'  # <app>/<model>_<viewtype>.html
     ordering = ['-date_posted']
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
