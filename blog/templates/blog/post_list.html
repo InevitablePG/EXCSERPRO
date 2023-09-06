@@ -112,7 +112,7 @@
                 <div style="position: static;" class="col-md-6 mb-3">
                     <h4 class="blog-h mb-2">{{ post.title }}</h4>
                     <div class="border border-top-0 border-left-0 border-right-0 pb-2" style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <img style="margin-right: 10px; border-radius: 50%;" width="30" height="30" src="{{ post.author.profile.image.url }}" alt="author">
+                        <img style="margin-right: 10px; border-radius: 50%;" width="30" height="30" src="{{ post.author.profile.image.url }}" alt="author" loading="lazy">
                         <span style="font-size: 0.9rem;" class="gordita-regular date">{{ post.author.username }}<span style="font-weight:700;font-size:larger; margin: 4px;"> &centerdot; </span>{{ post.date_posted|date:"F d, Y" }}</span>
                         {% if user.is_superuser %}
                             <div style="margin-left: auto;">

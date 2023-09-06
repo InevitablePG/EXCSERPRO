@@ -46,7 +46,6 @@
                 font-weight: bold;
             }
 
-            /* Add this to your CSS file or within a <style> tag in your HTML */
             .scroll-to-top {
                 display: none; /* Hide the button by default */
                 position: fixed;
@@ -60,10 +59,28 @@
                 cursor: pointer;
             }
 
-
             .scroll-to-top i {
                 font-size: 25px;
             }
+
+            @media (max-width: 480px) {
+                .logo img {
+                    width: 140px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .logo img {
+                    width: 170px;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .logo img {
+                    width: 200px;
+                }
+            }
+
         </style>
 
         <title>{% if title %}{{ title }}{% else %}EXCSERPRO{% endif %}</title>
@@ -82,7 +99,7 @@
             <div class="nav-container">
                 <div class="nav-start">
                     <a class="logo" href="/">
-                        <img src="{% static 'main/images/excserpro_logo.png' %}" width="200" alt="Excserpro Logo" />
+                        <img src="{% static 'main/images/excserpro_logo.png' %}" alt="Excserpro Logo" />
                     </a>
                     <nav class="menu">
                         <ul class="menu-bar">
