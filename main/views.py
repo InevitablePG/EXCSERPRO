@@ -80,7 +80,7 @@ class GalleryDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.request.user.is_staff
 
 
-def testimonals(request):
+def testimonials(request):
     testimonals = Testimonial.objects.all().order_by('-date_posted')
 
     if request.method == 'POST':
@@ -99,7 +99,7 @@ def testimonals(request):
     else:
         form = CommentForm()
 
-    return render(request, 'main/testimonals.html', {'form': form, 'testimonals': testimonals, 'title': "Testimonials |  EXCSERPRO : Excellent Service Provider"})
+    return render(request, 'main/testimonials.html', {'form': form, 'testimonals': testimonals, 'title': "Testimonials |  EXCSERPRO : Excellent Service Provider"})
 
 
 def contact(request):
